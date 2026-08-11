@@ -31,4 +31,4 @@ All datasets are synthetic, built to resemble real lending exports without conta
 ## Contact
 
 Daniel Olatunji (Lagos, Nigeria)
-Email: oluwafikayore@gmail.com
+Email: danolatunji25@gmail.com
