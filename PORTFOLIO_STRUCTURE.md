@@ -1,30 +1,15 @@
-# Credit Risk Portfolio Structure
+# Credit Risk Portfolio
 
-The repository groups five credit-risk analyses built from the same lending portfolio.
+Five SQL case studies built on one synthetic lending portfolio, covering the main questions a credit-risk team needs to answer:
 
 ```text
-Loan portfolio
+Loan Portfolio
      |
-     +--> IFRS 9 staging and expected loss
-     |
+     +--> IFRS 9 staging & expected loss
      +--> NPL monitoring
-     |
-     +--> delinquency and roll-rate migration
-     |
-     +--> default risk
-     |
-     +--> transaction fraud monitoring
+     +--> Delinquency & roll-rate migration
+     +--> Default risk analysis
+     +--> Fraud & transaction monitoring
      |
      v
-Portfolio risk decisions
-```
-
-## Flagship module
-
-**IFRS 9 staging and expected loss** is the strongest technical case in the group because it combines monthly loan performance, stage classification, migration, expected loss, and portfolio segmentation.
-
-The remaining modules should be read as supporting analyses rather than five unrelated projects.
-
-## Data rule
-
-The portfolio uses synthetic data. Credit-risk results are examples of analytical methods and are not financial advice or a claim about a real lending book.
+Credit & Portfolio Risk Decisions
