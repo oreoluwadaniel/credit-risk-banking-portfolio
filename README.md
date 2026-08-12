@@ -1,34 +1,42 @@
 # Credit Risk & Banking Analytics Portfolio
 
-Five SQL case studies on a synthetic multi-market lending portfolio. Same underlying loan dataset, five different angles a credit risk or portfolio management team actually needs: how loans are staged and provisioned, how many have gone bad, how they migrate between delinquency stages, what predicts default, and how fraud gets caught in the transaction stream.
+**Five SQL case studies showing how a lending portfolio can be monitored from early credit deterioration through default, migration, and fraud.**
 
-Each case study is self-contained with its own SQL, data, and README. This top-level README is the map.
+The projects use a shared synthetic loan portfolio and answer five questions a credit risk or portfolio management team needs to understand:
 
-## Case studies
+- Which loans are deteriorating before they default?
+- Where are non-performing loans concentrated?
+- How quickly are loans moving between delinquency stages?
+- What characteristics are associated with default?
+- Which transactions should be flagged for possible fraud?
 
-| # | Case study | Question it answers | Technique |
+Each case study is self-contained, with its own SQL, data, analysis, and README.
+
+## Case Studies
+
+| # | Case study | Business question | Main analysis |
 |---|---|---|---|
-| 01 | [IFRS 9 staging and expected loss](01-ifrs9-staging-and-expected-loss/) | Which loans are deteriorating right now, before they default? | Window functions, CTEs, vintage cohort staging |
-| 02 | [Non-performing loan monitoring](02-non-performing-loan-monitoring/) | What's the NPL ratio, and where is it concentrated by tier and country? | Segmentation, cohort performance |
-| 03 | [Roll-rate delinquency migration](03-roll-rate-delinquency-migration/) | How do loans move between delinquency stages month to month? | Roll-rate KPIs by credit tier, country, loan size |
-| 04 | [Loan default risk analysis](04-loan-default-risk-analysis/) | What separates a loan that defaults from one that doesn't? | SQL Server portfolio risk analysis |
-| 05 | [Fraud detection and transaction monitoring](05-fraud-detection-transaction-monitoring/) | Which transactions look like fraud, and how fast can that be flagged? | Real-time-style transaction monitoring rules |
+| 01 | [IFRS 9 Staging & Expected Loss](01-ifrs9-staging-and-expected-loss/) | Which loans are moving into higher-risk stages, and what does that mean for expected loss? | Stage classification, vintage analysis, window functions |
+| 02 | [Non-Performing Loan Monitoring](02-non-performing-loan-monitoring/) | Where is portfolio credit quality deteriorating? | NPL ratios, country and credit-tier segmentation |
+| 03 | [Roll-Rate Delinquency Migration](03-roll-rate-delinquency-migration/) | How are loans moving between delinquency stages month to month? | Roll rates, transition analysis, portfolio segmentation |
+| 04 | [Loan Default Risk Analysis](04-loan-default-risk-analysis/) | What characteristics separate defaulted loans from performing loans? | Default analysis, risk segmentation, SQL Server |
+| 05 | [Fraud Detection & Transaction Monitoring](05-fraud-detection-transaction-monitoring/) | Which transactions should be investigated for possible fraud? | Rule-based transaction monitoring and anomaly flags |
 
-## Why these are grouped together
+---
 
-They share one dataset and one domain, so splitting them into five separate repositories didn't add anything. Grouping them here makes the range easier to see in one pass: staging and provisioning, portfolio monitoring, behavioral migration, predictive risk, and fraud, all built on the same lending data.
+## How the portfolio fits together
 
-01 (IFRS 9 staging) is the most technically involved of the five: multi-step window functions, layered CTEs, and calendar-month vintage cohorting. Start there if you only have time for one.
+The five projects cover different points in the credit risk lifecycle:
 
-## Tools
-
-SQL Server (T-SQL) and PostgreSQL, depending on the case study. See each subfolder's README for the specific dialect and schema.
-
-## Data
-
-All datasets are synthetic, built to resemble real lending exports without containing any real customer or institutional data.
-
-## Contact
-
-Daniel Olatunji (Lagos, Nigeria)
-Email: danolatunji25@gmail.com
+```text
+Early Deterioration
+        ↓
+IFRS 9 Staging
+        ↓
+Delinquency Migration
+        ↓
+NPL Monitoring
+        ↓
+Default Risk
+        ↓
+Fraud & Transaction Monitoring
